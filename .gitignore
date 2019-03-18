@@ -8,3 +8,8 @@
 *.log
 *.run.xml
 *.swp
+*.4ct
+*.4tc
+*.tmp
+*.xref
+*.DS_Store
