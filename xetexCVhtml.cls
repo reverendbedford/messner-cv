@@ -5,7 +5,7 @@
 % Additional modifications made by Robert Oakes.  Copyright 2009.
 
 %\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xetexCV}[2009/11/15 - Modern looking resume which
+\ProvidesClass{xetexCVhtml}[2009/11/15 - Modern looking resume which
 uses the xetex typesetting system.]
 
 % Load the Base Class

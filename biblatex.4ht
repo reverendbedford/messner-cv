@@ -1,6 +1,6 @@
-% biblatex.4ht (2018-04-06-21:49), generated from tex4ht-4ht.tex
+% biblatex.4ht (2020-10-05-15:22), generated from tex4ht-4ht.tex
 % Copyright 2007-2009 Eitan M. Gurari
-% Copyright 2009-2018 TeX Users Group
+% Copyright 2009-2020 TeX Users Group
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -17,7 +17,7 @@
 %
 % If you modify this program, changing the
 % version identification would be appreciated.
-\immediate\write-1{version 2018-04-06-21:49}
+\immediate\write-1{version 2020-10-05-15:22}
 
    \def\make:blx:ver#1.#2#3\relax{%
    %\ifdim#1pt< 3pt \xdef\blx:ver:no{2}\else\xdef\blx:ver:no{3}\fi%
@@ -58,6 +58,10 @@
       {\c@secnumdepth=\sv:sec:cnt\save:section}}%
 }
 \gHAssign\bibN=0
+\def\TE@hook{}
+\AtBeginDocument{%
+  \Configure{ifthenelse}{\TE@hook}
+}
   \:CheckOption{ooffice}\if:Option
    \def\bibConfigure{\ConfigureList{thebibliography}%
       {\IgnorePar\EndP \gHAdvance\bib:N by 1
@@ -220,13 +224,16 @@
 % and language handling doesn't work. When we execute following code, the language
 % files are loaded before checking of the success and it seems to work.
 
+\AtBeginDocument{%
 \@ifpackageloaded{babel}
       {% This is required for languages which are never explicitly selected
+        % It seems this code was executed also with Polyglossia, where it caused compilation error
+        \@ifpackageloaded{polyglossia}{}{%
         \def\do#1{\blx@lbxinput{#1}{}{}}%
        \ifx\@empty\bbl@loaded\else%
        \expandafter\docsvlist\expandafter{\bbl@loaded}%
-      \fi}{}%
-
+      \fi}}{}%
+}
 \fi % end of version boolean
 \NewConfigure{finentry}{2}
 \def\:tempc[#1]#2{%
@@ -429,6 +436,11 @@
    \else
 \fi
 
+\ifdefined\XeTeXversion
+  \def\abx@aux@defaultrefcontext#1#2#3{%
+    \global\boolfalse{refcontextdefaults}%
+  \csxdef{blx@assignedrefcontextbib@#1@\detokenize{#2}}{\detokenize{#3}}}
+\fi
 
    \NewConfigure{thebibliography}{4}
 \append:def\blx@bibinit{\a:bibinit}%
