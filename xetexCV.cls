@@ -23,7 +23,7 @@ uses the xetex typesetting system.]
 
 % Fonts
 \defaultfontfeatures{Mapping=tex-text}
-\setromanfont [Ligatures={Common},  ]{Linux Libertine O}
+% \setromanfont [Ligatures={Common},  ]{Linux Libertine O}
 
 % Custom Document Formatting
 \newcommand\decorativeline[1][1pt]{%
@@ -110,7 +110,7 @@ uses the xetex typesetting system.]
 		\end{minipage}
 		\begin{minipage}[t]{2.5in}
 			{\bfseries Additional contact information \\}
-			\ifthenelse{\equal{\@personalemail}{\relax}}{}{Personal email: \href{mailto:\@personalemail}{\@personalemail}\\}
+			\ifthenelse{\equal{\@personalemail}{\relax}}{}{Email: \href{mailto:\@personalemail}{\@personalemail}\\}
 			\ifthenelse{\equal{\@homephonenumber}{\relax}}{}{Home phone: \texttt{\@homephonenumber}\\}
 		\end{minipage}
 	\end{minipage}

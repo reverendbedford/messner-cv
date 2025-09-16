@@ -1,5 +1,6 @@
  
 /* start css.sty */
+.cmr-7{font-size:70%;}
 .cmssbx-10x-x-172{font-size:172%; font-family: sans-serif; font-weight: bold;}
 .cmbx-10{ font-weight: bold;}
 .cmtt-10{font-family: monospace,monospace;}
@@ -54,6 +55,7 @@ div.flushleft {text-align: left;}
 .framebox-r {text-align:right;}
 span.thank-mark{ vertical-align: super }
 span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+code.verb{font-family:monospace,monospace;}
 div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
 table.tabular td p{margin-top:0em;}
 table.tabular {margin-left: auto; margin-right: auto;}
@@ -73,6 +75,8 @@ table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 .hline td, .cline td{ padding: 0; }
 .hline hr, .cline hr{border:none;border-top:1px solid black;}
 .hline {border-top: 1px solid black;}
+.hline + .vspace:last-child{display:none;}
+.hline:first-child{border-bottom:1px solid black;border-top:none;}
 .tabbing-right {text-align:right;}
 div.float, div.figure {margin-left: auto; margin-right: auto;}
 div.float img {text-align:center;}
@@ -97,12 +101,14 @@ table.pmatrix {width:100%;}
 span.bar-css {text-decoration:overline;}
 img.cdots{vertical-align:middle;}
 .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+.chapterToc a, .chapterToc, .likechapterToc a, .likechapterToc, .appendixToc a, .appendixToc {line-height: 200%; font-weight:bold;}
 .index-item, .index-subitem, .index-subsubitem {display:block}
 div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
 div.caption span.id{font-weight: bold; white-space: nowrap; }
 h1.partHead{text-align: center}
 p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
 p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+.subsubsectionHead, .likesubsubsectionHead { font-size: 1em; }
 .paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
 .subparagraphHead, .likesubparagraphHead { font-weight: bold;}
 .verse{white-space:nowrap; margin-left:2em}
@@ -115,12 +121,18 @@ div.author{white-space: nowrap;}
 div.abstract p {margin-left:5%; margin-right:5%;}
 div.abstract {width:100%;}
 .abstracttitle{text-align:center;margin-bottom:1em;}
+.subsectionToc, .likesubsectionToc {margin-left:1em;}
+.subsubsectionToc, .likesubsubsectionToc {margin-left:2em;}
+.paragraphToc, .likeparagraphToc {margin-left:3em;}
+.subparagraphToc, .likesubparagraphToc {margin-left:4em;}
 .rotatebox{display: inline-block;}
-.uline{ text-decoration:underline; }
-.uuline{ text-decoration:underline; }
-span.sout {text-decoration: line-through }
-span.xout {text-decoration: line-through }
-span.uwave {text-decoration:underline }
+.uline,.uline-math{ text-decoration:underline; }
+.uuline,.uuline-math{ text-decoration:underline double; }
+span.sout, .sout-math {text-decoration: line-through }
+span.xout, .xout-math {text-decoration: line-through underline }
+span.uwave, .uwave-math {text-decoration:underline wavy; }
+span.dashuline, .dashuline-math {text-decoration:underline dashed;}
+span.dotuline, .dotuline-math {text-decoration:underline dotted;}
 dt.printshorthands{float:left; clear:left; margin-right:1em;}
 dd.thebibliography {margin-left: 2.5em;}
 dt.thebibliography {float:left; clear:left; margin-right:1em;}
