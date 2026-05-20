@@ -3,6 +3,8 @@
 rm -f *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.out *.run.xml *.4ct *.4tc *.tmp *.xref *.dvi *.idv *.lg
 latexmk -xelatex cv
 
+latexmk -xelatex reduced_cv
+
 htlatex web
 biber web
 htlatex web
